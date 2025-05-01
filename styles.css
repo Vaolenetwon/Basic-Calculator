@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.calculator {
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+}
+
+.display {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: right;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.previous-operand {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    overflow-wrap: break-word;
+}
+
+.current-operand {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    overflow-wrap: break-word;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background-color: #666;
+    color: white;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #777;
+}
+
+button:active {
+    background-color: #555;
+}
+
+button[data-operation] {
+    background-color: #ff9500;
+}
+
+button[data-operation]:hover {
+    background-color: #ffaa33;
+}
+
+button[data-operation]:active {
+    background-color: #cc7700;
+}
+
+button[data-action="clear"] {
+    background-color: #ff3b30;
+}
+
+button[data-action="clear"]:hover {
+    background-color: #ff5e54;
+}
+
+button[data-action="clear"]:active {
+    background-color: #cc3026;
+}
+
+button[data-action="delete"] {
+    background-color: #a5a5a5;
+    color: #333;
+}
+
+button[data-action="delete"]:hover {
+    background-color: #b5b5b5;
+}
+
+button[data-action="delete"]:active {
+    background-color: #858585;
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    button {
+        padding: 15px;
+        font-size: 1.2rem;
+    }
+    
+    .display {
+        min-height: 80px;
+        padding: 15px;
+    }
+    
+    .previous-operand {
+        font-size: 1rem;
+    }
+    
+    .current-operand {
+        font-size: 2rem;
+    }
+}
